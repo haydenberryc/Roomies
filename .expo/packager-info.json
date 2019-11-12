@@ -1,9 +1,9 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": null,
-  "packagerPort": null,
-  "packagerPid": null,
+  "expoServerPort": 19000,
+  "packagerPort": 19001,
+  "packagerPid": 19320,
   "expoServerNgrokUrl": "https://m5-8e4.anonymous.roomies.exp.direct",
   "packagerNgrokUrl": "https://packager.m5-8e4.anonymous.roomies.exp.direct",
-  "ngrokPid": 18161
+  "ngrokPid": 21556
 }

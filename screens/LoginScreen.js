@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { View, Text, StyleSheet, Button, ImageBackground, Image } from 'react-native';
 
 import * as Google from 'expo-google-app-auth';
 import firebase from 'firebase';
-
+import bgImg from './images/background.jpg'
+import ourlogo from './images/logo.png'
 class LoginScreen extends Component {
 
     isUserEqual = (googleUser, firebaseUser) => {
@@ -82,9 +83,14 @@ class LoginScreen extends Component {
 
     render() {
         return (
-            <View style={styles.container} >
+            <ImageBackground source={bgImg} style={styles.backgroungContainer}>
+            <View style={styles.logoContainer} >
+            {/* <View style={styles.container} > */}
+                <Image source={ourlogo} style={styles.logo}/>
+                <Text style={styles.logoText}>ROMMIES</Text>
                 <Button title='Sign In With Google' onPress={() => this.signInAsync()}></Button>
             </View >
+            </ImageBackground>
         );
     }
 }
@@ -96,5 +102,35 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center'
+    },
+    backgroungContainer: {
+        flex:1,
+        width:null,
+        height:null,
+        justifyContent:'center',
+        alignContent:'center',
+    },
+    logoContainer: {
+        alignItems:'center'
+    },
+    logo:{
+        width:120,
+        height:120,
+    },
+    logoText:{
+        color:'red',
+        fontSize: 20,
+        fontWeight: 'normal',
+        marginTop: 10,
+        opacity: 0.5,
+        padding: 10,
+
+    },
+    btnSignIn:{
+        height:45,
+        borderRadius:25,
+        fontSize:16,
+        justifyContent: 'center',
+       
     }
 });
