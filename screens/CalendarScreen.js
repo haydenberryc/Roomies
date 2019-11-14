@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
-import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
+import { Calendar } from 'react-native-calendars';
 
 let UserInfo = require('../Info');
 
@@ -14,17 +14,21 @@ class CalendarScreen extends Component {
 
     render() {
         return (
-            <View styles={styles.container}>
-                <Calendar
-                    markedDates={
-                        UserInfo.myMarkedDates
-                    }
-                    markingType={'multi-dot'}
-                />
-                <Button title='Back to Dashboard' onPress={() => this.props.navigation.navigate('DashboardScreen')}></Button>
-                <Button title='Add A New Event' onPress={() => this.props.navigation.navigate('EventFormScreen')}></Button>
+            <View style={styles.container}>
+                <View>
+                    <Calendar
+                        markedDates={
+                            UserInfo.myMarkedDates
+                        }
+                        markingType={'multi-dot'}
+                    />
+                    <Button title='Back to Dashboard' onPress={() => this.props.navigation.navigate('DashboardScreen')}></Button>
+                    <Button title='Add A New Event' onPress={() => this.props.navigation.navigate('EventFormScreen')}></Button>
+                </View>
+                <View style={styles.text}>
+                    <Text style={styles.text}>Event List</Text>
+                </View>
             </View>
-
         );
     }
 }
@@ -33,9 +37,14 @@ export default CalendarScreen;
 
 const styles = StyleSheet.create({
     container: {
-
+        margin: 10,
         flex: 1,
+        justifyContent: 'center',
+    },
+    text: {
+        fontSize: 20,
         alignItems: 'center',
-        justifyContent: 'center'
+        padding: 10,
+        fontWeight: 'bold'
     }
 });

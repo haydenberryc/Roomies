@@ -3,7 +3,7 @@
   "expoServerPort": null,
   "packagerPort": null,
   "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null
+  "expoServerNgrokUrl": "https://nc-fmr.anonymous.roomies.exp.direct",
+  "packagerNgrokUrl": "https://packager.nc-fmr.anonymous.roomies.exp.direct",
+  "ngrokPid": 6955
 }

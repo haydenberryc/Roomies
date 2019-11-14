@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
-import DialogInput from 'react-native-dialog-input';
 import uuid from 'uuid/v4';
 
 import firebase from 'firebase';
@@ -13,7 +12,6 @@ class GroupScreen extends Component {
         console.log("creating new group....", guid);
         firebase.database().ref('/groups/' + guid + '/members/').set([firebase.auth().currentUser.uid]);
         firebase.database().ref('/users/' + firebase.auth().currentUser.uid + '/group/').set(guid);
-
     }
 
     render() {
