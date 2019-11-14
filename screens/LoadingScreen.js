@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, ActivityIndicator } from 'react-native';
+import { View, Text, StyleSheet,ImageBackground, ActivityIndicator } from 'react-native';
 import firebase from 'firebase';
+import bgImg from './images/background.jpg';
 
 class LoadingScreen extends Component {
 
@@ -24,9 +25,11 @@ class LoadingScreen extends Component {
 
     render() {
         return (
+            <ImageBackground source={bgImg} style={styles.backgroungContainer}>
             <View style={styles.container} >
                 <ActivityIndicator size='large' />
             </View >
+            </ImageBackground>
         );
     }
 }
@@ -38,5 +41,12 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center'
+    },
+    backgroungContainer: {
+        flex:1,
+        width:null,
+        height:null,
+        justifyContent:'center',
+        alignContent:'center',
     }
 });
