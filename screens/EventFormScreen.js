@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, TextInput, StyleSheet, Button, Text, DatePickerIOS } from 'react-native';
+import { View, TextInput, StyleSheet,ImageBackground, Button, Text, DatePickerIOS } from 'react-native';
+import bgImg from './images/background.jpg';
 
 let UserInfo = require('../Info');
 
@@ -48,24 +49,29 @@ class EventFormScreen extends Component {
 
     render() {
         return (
-            <View style={styles.container}>
-                <View style={styles.eventInfo}>
-                    <Text style={{ fontSize: 30, fontWeight: 'bold' }}>Event Creation Form</Text>
-                </View>
-                <View style={styles.eventInfo}>
-                    <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Please Enter An Event Name</Text>
-                    <TextInput style={{ fontSize: 28 }} value={this.state.eventName} onChangeText={eventName => this.setState({ eventName })} placeholder="event name"></TextInput>
-                </View>
-                <View style={styles.eventInfo}>
-                    <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Please Enter An Event Description</Text>
-                    <TextInput style={{ fontSize: 28 }} value={this.state.eventDesc} onChangeText={eventDesc => this.setState({ eventDesc })} placeholder="event description" ></TextInput>
-                </View>
-                <View style={styles.datepicker}>
+            <ImageBackground source={bgImg} style={styles.backgroungContainer}>
+            <View style={styles.container} >
+                <Text>New Event Form Screen</Text>
+                <Button title='Back to Dashboard' onPress={() => this.props.navigation.navigate('DashboardScreen')}></Button>
+                <TextInput
+                    style={styles.textInput}
+                    placeholder="Please Enter An Event Name"
+                    maxLength={20}
+                    fontSize={28}
+                />
+                <TextInput
+                    style={styles.textInput}
+                    placeholder="Please Enter An Event Descrition"
+                    maxLength={20}
+                    fontSize={28}
+                />
+                <View style={styles.textInput}>
                     <DatePickerIOS date={this.state.eventDate} onDateChange={this.setDate} />
                 </View>
                 <Button title="submit" onPress={() => this.createEvent()} />
                 <Button title="back" onPress={() => this.props.navigation.navigate('DashboardScreen')} />
-            </View>
+            </View >
+            </ImageBackground>
         );
     }
 }
@@ -77,9 +83,12 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center'
     },
-    eventInfo: {
-        alignItems: 'center',
-        padding: 10
+    backgroungContainer: {
+        flex:1,
+        width:null,
+        height:null,
+        justifyContent:'center',
+        alignContent:'center',
     }
 
 });

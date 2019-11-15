@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
-import { Calendar } from 'react-native-calendars';
-
+import { View, Text, StyleSheet,ImageBackground, Button } from 'react-native';
+import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
+import bgImg from './images/background.jpg';
 let UserInfo = require('../Info');
 
 import firebase from 'firebase';
@@ -14,21 +14,19 @@ class CalendarScreen extends Component {
 
     render() {
         return (
-            <View style={styles.container}>
-                <View>
-                    <Calendar
-                        markedDates={
-                            UserInfo.myMarkedDates
-                        }
-                        markingType={'multi-dot'}
-                    />
-                    <Button title='Back to Dashboard' onPress={() => this.props.navigation.navigate('DashboardScreen')}></Button>
-                    <Button title='Add A New Event' onPress={() => this.props.navigation.navigate('EventFormScreen')}></Button>
-                </View>
-                <View style={styles.text}>
-                    <Text style={styles.text}>Event List</Text>
-                </View>
+            <ImageBackground source={bgImg} style={styles.backgroungContainer}>
+            <View styles={styles.container}>
+                <Calendar
+                    markedDates={
+                        this.myMarkedDates
+                    }
+                    markingType={'multi-dot'}
+                />
+                <Button title='Back to Dashboard' onPress={() => this.props.navigation.navigate('DashboardScreen')}></Button>
+                <Button title='Add A New Event' onPress={() => this.props.navigation.navigate('EventFormScreen')}></Button>
+
             </View>
+            </ImageBackground>
         );
     }
 }
@@ -44,7 +42,13 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 20,
         alignItems: 'center',
-        padding: 10,
-        fontWeight: 'bold'
+        justifyContent: 'center'
+    },
+    backgroungContainer: {
+        flex:1,
+        width:null,
+        height:null,
+        justifyContent:'center',
+        alignContent:'center',
     }
 });
