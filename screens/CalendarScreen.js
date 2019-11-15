@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { View, Text, StyleSheet,ImageBackground, Button } from 'react-native';
 import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
+import bgImg from './images/background.jpg';
 
 import firebase from 'firebase';
 
@@ -51,6 +52,7 @@ class CalendarScreen extends Component {
 
     render() {
         return (
+            <ImageBackground source={bgImg} style={styles.backgroungContainer}>
             <View styles={styles.container}>
                 <Calendar
                     markedDates={
@@ -62,6 +64,7 @@ class CalendarScreen extends Component {
                 <Button title='Add A New Event' onPress={() => this.props.navigation.navigate('EventFormScreen')}></Button>
 
             </View>
+            </ImageBackground>
 
         );
     }
@@ -75,5 +78,12 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center'
+    },
+    backgroungContainer: {
+        flex:1,
+        width:null,
+        height:null,
+        justifyContent:'center',
+        alignContent:'center',
     }
 });

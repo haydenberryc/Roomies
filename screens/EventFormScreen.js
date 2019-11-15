@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, TextInput, StyleSheet, Button, Text } from 'react-native';
+import { View, TextInput, StyleSheet,ImageBackground, Button, Text } from 'react-native';
+import bgImg from './images/background.jpg';
 
 import firebase from 'firebase';
 
@@ -7,6 +8,7 @@ class EventFormScreen extends Component {
 
     render() {
         return (
+            <ImageBackground source={bgImg} style={styles.backgroungContainer}>
             <View style={styles.container} >
                 <Text>New Event Form Screen</Text>
                 <Button title='Back to Dashboard' onPress={() => this.props.navigation.navigate('DashboardScreen')}></Button>
@@ -29,6 +31,7 @@ class EventFormScreen extends Component {
                     fontSize={28}
                 />
             </View >
+            </ImageBackground>
         );
     }
 }
@@ -40,5 +43,12 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center'
+    },
+    backgroungContainer: {
+        flex:1,
+        width:null,
+        height:null,
+        justifyContent:'center',
+        alignContent:'center',
     }
 });
