@@ -9,6 +9,8 @@ import LoadingScreen from './screens/LoadingScreen';
 import GroupScreen from './screens/GroupScreen';
 import CalendarScreen from './screens/CalendarScreen';
 import EventFormScreen from './screens/EventFormScreen';
+import FeedScreen from './screens/FeedScreen';
+import ProfileHome from './screens/ProfileHome';
 
 import * as firebase from 'firebase';
 
@@ -26,7 +28,9 @@ const AppSwitchNavigator = createSwitchNavigator({
   DashboardScreen: DashboardScreen,
   GroupScreen: GroupScreen,
   CalendarScreen: CalendarScreen,
-  EventFormScreen: EventFormScreen
+  EventFormScreen: EventFormScreen,
+  ProfileHome: ProfileHome,
+  FeedScreen: FeedScreen
 });
 
 const AppNavigator = createAppContainer(AppSwitchNavigator);

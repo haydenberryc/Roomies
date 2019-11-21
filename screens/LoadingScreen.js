@@ -51,7 +51,7 @@ class LoadingScreen extends Component {
                         this.getUserID();
                         this.getGroupID();
                         this.getEvents();
-                        this.props.navigation.navigate('DashboardScreen');
+                        this.props.navigation.navigate('ProfileHome');
                     }
                 }.bind(this));
             }
