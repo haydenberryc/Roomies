@@ -3,12 +3,14 @@ import { StyleSheet, Text, View } from 'react-native';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { firebaseConfig } from './config';
 
+
 import LoginScreen from './screens/LoginScreen';
 import DashboardScreen from './screens/DashboardScreen';
 import LoadingScreen from './screens/LoadingScreen';
 import GroupScreen from './screens/GroupScreen';
 import CalendarScreen from './screens/CalendarScreen';
 import EventFormScreen from './screens/EventFormScreen';
+
 
 import * as firebase from 'firebase';
 
