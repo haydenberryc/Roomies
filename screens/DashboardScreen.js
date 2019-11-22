@@ -15,6 +15,10 @@ class DashboardScreen extends Component {
         firebase.auth().signOut();
     }
 
+    addUserToGroup() {
+
+    }
+
     render() {
         return (
             <View style={styles.container} >
@@ -22,6 +26,8 @@ class DashboardScreen extends Component {
                 <Button title='Sign Out' onPress={() => this.signOut()}></Button>
                 <Button title='Calendar View' onPress={() => this.props.navigation.navigate('CalendarScreen')}></Button>
                 <Button title='Create New Event' onPress={() => this.props.navigation.navigate('EventFormScreen')}></Button>
+                <Button title='PROFILE' onPress={() => this.props.navigation.navigate('ProfilePageScreen')}></Button>
+                <Button title='Add User To Group' onPress={() => this.addUserToGroup()}></Button>
             </View >
         );
     }
